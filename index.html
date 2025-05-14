@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Exchange - Trukaketa Jasangarria</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Green Exchange Logo">
+            </div>
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="eu">Euskera</option>
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home-section">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 data-i18n="hero.title">Trukatu, Berrerabili, Jasangarritasuna</h1>
+                    <div class="search-container">
+                        <input type="text" placeholder="Zer bilatzen ari zara?" data-i18n-placeholder="search.placeholder">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ads-grid">
+                <!-- Los anuncios se cargarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <section class="search-section hidden">
+            <div class="search-results">
+                <h2 data-i18n="search.title">Bilaketa Emaitzak</h2>
+                <div class="ads-grid">
+                    <!-- Los resultados de búsqueda se cargarán aquí -->
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section hidden">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <img src="https://via.placeholder.com/150" alt="Profile" class="profile-image">
+                    <h2 data-i18n="profile.name">Erabiltzaile Izena</h2>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span data-i18n="profile.exchanges">Trukaketak</span>
+                        <strong>12</strong>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span data-i18n="profile.rating">Balorazioa</span>
+                        <strong>4.8</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="nav-links">
+        <a href="#" data-section="home" class="active">
+            <i class="fas fa-home"></i>
+            <span data-i18n="nav.home">Inicio</span>
+        </a>
+        <a href="#" data-section="search">
+            <i class="fas fa-search"></i>
+            <span data-i18n="nav.search">Búsqueda</span>
+        </a>
+        <a href="#" data-section="create">
+            <i class="fas fa-plus"></i>
+            <span data-i18n="nav.create">Crear</span>
+        </a>
+        <a href="#" data-section="profile">
+            <i class="fas fa-user"></i>
+            <span data-i18n="nav.profile">Perfil</span>
+        </a>
+    </nav>
+
+    <button class="floating-button" id="createAdButton">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <div class="modal" id="createAdModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-i18n="modal.createAd">Iragarki Berria Sortu</h2>
+            <form id="createAdForm">
+                <input type="text" name="title" placeholder="Iragarkiaren Izenburua" required data-i18n-placeholder="modal.title">
+                <textarea name="description" placeholder="Deskribapena" required data-i18n-placeholder="modal.description"></textarea>
+                <input type="text" name="category" placeholder="Kategoria" required data-i18n-placeholder="modal.category">
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit" data-i18n="modal.submit">Iragarkia Argitaratu</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
